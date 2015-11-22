@@ -27,4 +27,9 @@ urlpatterns = [
     url(r'^thanks/$','conserve.views.thanks',name='thank'),
     url('', include('social.apps.django_app.urls', namespace='social')),
     url('', include('django.contrib.auth.urls',namespace='auth')),
+    url(r'^about/$','conserve.views.about',name='about'),
+    url(r'^mission/$','conserve.views.mission',name='mission'),
+    url(r'^works/$','conserve.views.works',name='works'),
+    url(r'^approach/$','conserve.views.approach',name='approach'),
+    url(r'^thanks/$','conserve.views.thanks',name='thank'),
     ]
