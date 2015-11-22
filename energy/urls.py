@@ -15,11 +15,16 @@ Including another URLconf
 """
 from django.conf.urls import include, url,patterns
 from django.contrib import admin
+from django.views.generic import TemplateView
+
 admin.autodiscover()
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^$','conserve.views.Login',name='Login'),
-    url(r'', include('social.apps.django_app.urls', namespace='social')),
-    url(r'', include('django.contrib.auth.urls',namespace='auth')),
+    url(r'^$','conserve.views.Login',name='login'),
+    url(r'^profile/$','conserve.views.profile',name='profile'),
+    url(r'^bill/$','conserve.views.mailer',name='mail'),
+    url(r'^thanks/$','conserve.views.thanks',name='thank'),
+    url('', include('social.apps.django_app.urls', namespace='social')),
+    url('', include('django.contrib.auth.urls',namespace='auth')),
     ]

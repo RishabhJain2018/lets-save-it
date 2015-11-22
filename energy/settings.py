@@ -119,8 +119,17 @@ AUTHENTICATION_BACKENDS = (
 )
 
 
-LOGIN_REDIRECT_URL = '/'
+
 
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY ='872076081040-br7fgp628aka5tvsoh99073qunmfkq93.apps.googleusercontent.com'
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'awlZrB0dLhKGdtpOT4CJA-BK'
 
+LOGIN_REDIRECT_URL = '/profile'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'sahil.kr.maurya@gmail.com'
+EMAIL_HOST_PASSWORD = '9935757875'
+EMAIL_USE_TLS = True

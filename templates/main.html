@@ -1,5 +1,5 @@
 {% extends 'index.html' %}
-{% block main %}
+{% block main %} 
 <div>
 <p>
 	<ul>
@@ -7,16 +7,14 @@
 		<li>
 			<a> Hello {{user.get_full_name|default:user.username}}!</a>
 		</li>
-		<li>
-		<a href="{% url 'auth:logout' %}?next={{request.path}}">Logout </a>
-		</li>
 		{% else %}
 		<li>
-		<a href="{% url 'social:begin' 'google-oauth2' %}?next={{request.path}}">
-			<h4> login using Google Account </h4></a>
+		<a href="{% url 'social:begin' 'google-oauth2' %}?next=/profile">
+			<h4> Login using Google Account </h4></a>
 		</li>
 		{% endif %}
 	</ul>
+	{% block pro %} {% endblock %}
 </p>
 </div>
 {% endblock %}

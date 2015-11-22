@@ -1,0 +1,24 @@
+@font-face {
+    font-family: bebas-neue;
+    src: url(../fonts/BebasNeue.otf);
+}
+@font-face {
+    font-family: arbonnie;
+    src: url(../fonts/ARBONNIE.ttf);
+}
+@font-face {
+    font-family: asgaltreg;
+    src: url(../fonts/Asgalt-Regular.ttf);
+}
+
+h1
+{
+	font-family: asgaltreg;
+	font-size: 100px;
+}
+
+p
+{
+	font-family: arbonnie;
+	font-size: 35px;
+}
