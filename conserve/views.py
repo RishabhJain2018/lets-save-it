@@ -33,7 +33,6 @@ def profile(request):
 	elif request.method=="GET":
 		form=UserForm()
 		return render(request,'detail.html',{'form':form})
-
 	return render(request,'detail.html',{'form':form})
 
 def thanks(request):
@@ -41,10 +40,16 @@ def thanks(request):
 
 def mailer(request):
 	if request.method=='POST':
-		form=BillForm(request.POST)
-		if form.is_valid():
-			form.save()
+		form=BillForm()
+		pres=request.POST['prescribed_unit']
+		alert=request.POST['alert_unit']
+		curr=request.POST['current_unit']
+		if (curr==alert):
+			message = "Hello \n \n You are exceeding your limit."
+			send_mail("Electricity bill", str(message), '',['',], fail_silently = False)
 			return HttpResponseRedirect('/thanks')
+			else:
+				return HttpResponseRedirect('/thanks')
 	elif request.method=="GET":
 		form = BillForm()
 		return render(request,'Bill details.html',{'form':form})

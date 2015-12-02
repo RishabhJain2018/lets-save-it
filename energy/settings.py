@@ -58,7 +58,7 @@ ROOT_URLCONF = 'energy.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR+'/templates'],
+        'DIRS': [BASE_DIR+'/templates'], # os.path.join(blah blah)
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -133,9 +133,8 @@ SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'awlZrB0dLhKGdtpOT4CJA-BK'
 LOGIN_REDIRECT_URL = '/profile'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'sahil.kr.maurya@gmail.com'
-EMAIL_HOST_PASSWORD = '9935757875'
 EMAIL_USE_TLS = True
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
